@@ -1,0 +1,49 @@
+print()
+
+
+print("UNIT CONVERTER")
+print()
+
+conversions_available = [( 1, 'km', 'mi'),
+                         ( 2, 'mi', 'km'),
+                         ( 3, 'kg', 'ibs'),
+                         ( 4, 'ibs', 'kg'),
+                         ( 5, '°F', '°C'),
+                         ( 6, '°C', '°F')
+                        ]
+
+print("Conversions available: ")
+print()
+
+for conversions_number, from_unit, to_unit in conversions_available:
+    print(f'{conversions_number}) {from_unit} -> {to_unit}')  #prints table for user per column with a for loop
+
+print()
+conversion = input("Enter the number of the conversion to use --> ") 
+conversion_index = int(conversion) - 1    #subtracts one since the list counts indexes from 0 ex: user puts 1 index(line[0])
+
+conversion_number, from_unit, to_unit = conversions_available[conversion_index]  #locates the subtraction index to items in list
+print()
+
+from_value = float(input(f'Enter {from_unit} -->'))
+
+if conversion == "1":
+    result = from_value / 1.609
+    print(result) #hahha it works good :)
+elif conversion == "2":
+    result = from_value * 1.609
+    print(result)
+elif conversion == "3":
+    result = from_value * 2.205
+    print(result)
+elif conversion == "4":
+    result = from_value / 2.205
+    print(result)
+elif conversion == "5":
+    result = (5/9) * from_value - 32
+    print(result)
+elif conversion == "6":
+    result = (9/5) * from_value + 32
+    print(result)
+else:
+    print("Try that again buddy")  
