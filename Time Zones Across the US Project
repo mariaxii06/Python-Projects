@@ -1,0 +1,72 @@
+import time
+import pytz
+import os
+from datetime import datetime 
+
+#will add some colors maybe
+
+
+
+easternTz = pytz.timezone("America/New_York")    # emphasizes the time in eastern US
+timeInEast = datetime.now(easternTz)     #uses datetime.now() to get the current time of that place
+currentTimeInEast = timeInEast.strftime("%H:%M:%S")     #How we are printing the time to the screen
+
+centralTz = pytz.timezone("America/Indianapolis")
+timeInCentral = datetime.now(centralTz)
+currentTimeInCentral = timeInCentral.strftime("%H:%M:%S")
+
+mountainTz = pytz.timezone("America/Denver")
+timeInMountain = datetime.now(centralTz)
+currentTimeInMountain = timeInMountain.strftime("%H:%M:%S")
+
+paificTz = pytz.timezone("America/Los_Angeles")
+timeInPacific = datetime.now(centralTz)
+currentTimeInPacific = timeInPacific.strftime("%H:%M:%S")
+
+al_hi = pytz.timezone("America/Anchorage")
+timeInAL_HI = datetime.now(centralTz)
+currentTimeInAL_HI = timeInAL_HI.strftime("%H:%M:%S")
+
+while True: 
+    print()
+
+    print(" - Time Zones Across the United States - ")
+    print()
+    print("Please select the correspoding number.")
+
+    print()
+
+    print(" 1. Eastern Time\n 2. Central Time\n 3. Mountain Time\n 4. Pacific Time\n 5. Hawaii & ALaska\n")
+    print()
+
+    userInput = input("What U.S. Time Zone would you want to know? ")
+
+    if userInput== "1":
+        print(f"Current Time on the eastern: {currentTimeInEast}")
+        time.sleep(2)
+        os.system("clear")
+
+    elif userInput == "2":
+        print(f"Current Time in central: {currentTimeInCentral}")
+        time.sleep(2)
+        os.system("clear")
+
+    elif userInput == "3":
+        print(f"Current Time in mountain: {currentTimeInMountain}")
+        time.sleep(2)
+        os.system("clear")
+
+    elif userInput == "4":
+        print(f"Current Time in pacific: {currentTimeInPacific}")
+        time.sleep(2)
+        os.system("clear")
+
+    elif userInput == "5":
+        print(f"Current Time in Hawaii and Alaska: {currentTimeInAL_HI}")
+        time.sleep(2)
+        os.system("clear")
+
+    else:
+        print("You have not inputted a number please try again.")
+        time.sleep(2)
+        os.system("clear")
