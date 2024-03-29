@@ -16,15 +16,15 @@ timeInCentral = datetime.now(centralTz)
 currentTimeInCentral = timeInCentral.strftime("%H:%M:%S")
 
 mountainTz = pytz.timezone("America/Denver")
-timeInMountain = datetime.now(centralTz)
+timeInMountain = datetime.now(mountainTz)
 currentTimeInMountain = timeInMountain.strftime("%H:%M:%S")
 
 paificTz = pytz.timezone("America/Los_Angeles")
-timeInPacific = datetime.now(centralTz)
+timeInPacific = datetime.now(paificTz)
 currentTimeInPacific = timeInPacific.strftime("%H:%M:%S")
 
 al_hi = pytz.timezone("America/Anchorage")
-timeInAL_HI = datetime.now(centralTz)
+timeInAL_HI = datetime.now(al_hi)
 currentTimeInAL_HI = timeInAL_HI.strftime("%H:%M:%S")
 
 while True: 
