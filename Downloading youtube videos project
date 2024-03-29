@@ -1,0 +1,12 @@
+from pytube import YouTube
+
+# link for the download: https://pytube.io/en/latest/user/install.html
+
+vid = input("Enter video URL: ")
+
+yt = YouTube(vid)
+
+video_stream = yt.streams.filter(progressive=True ,
+                                 file_extension="mp4")
+video_stream = video_stream.order_by("resolution").desc().first()
+video_stream.download()
