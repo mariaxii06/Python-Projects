@@ -1,0 +1,18 @@
+import datetime
+
+
+alarmHour = int(input("Enter Hour: "))
+alarmMin = int(input("Enter Min: "))
+alarmAm = input("am / pm: ")
+
+if alarmAm == "pm":
+    alarmHour +=12
+#ex - 1 pm = 13:00 on the 24hr scale
+
+while True:
+    if alarmHour == datetime.datetime.now().hour and alarmMin==datetime.datetime.now().minute:
+        print()
+        print("-- ALARM --")
+        print(f"{alarmHour}:{alarmMin}")
+        break
+
