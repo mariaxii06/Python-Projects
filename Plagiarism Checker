@@ -1,0 +1,26 @@
+# Importing SequenceMatcher 
+# from difflib module 
+from difflib import SequenceMatcher 
+
+
+
+while True: 
+    string1 = input("String 1: ")
+    string2 = input('String 2: ')
+
+    # Using the SequenceMatcher() 
+    match = SequenceMatcher(None, 
+						string1, string2) 
+
+    # convert above output into ratio 
+    # and multiplying it with 100 
+    result = match.ratio() * 100
+
+    # Display the final result 
+    print(int(result), "%")
+
+    ask = input("Do you wish to continue? (Y/n):  ")
+    if ask.lower == 'y':
+        continue
+    else:
+        break
