@@ -1,0 +1,41 @@
+import time
+import wonderwords
+from wonderwords import RandomSentence
+
+def randomSentence():
+    s = RandomSentence()
+
+    # Get a random sentence with a subject, predicate, direct object and adjective
+    s.sentence()
+
+    print(s)
+
+def typing_tester():
+    # Sample text to test the user's typing speed and accuracy
+    sample_text = "The quick brown fox jumps over the lazy dog." 
+    randomSentence()
+
+    # Start timer
+    start_time = time.time()
+
+    # Get user input
+    user_input = input("Type the following text: " + sample_text + "\n")
+
+    # End timer
+    end_time = time.time()
+
+    # Calculate typing speed
+    typing_speed = len(sample_text) / (end_time - start_time)
+
+    # Calculate accuracy
+    accuracy = 0
+    for i in range(len(sample_text)):
+        if sample_text[i] == user_input[i]:
+            accuracy += 1
+    accuracy = accuracy / len(sample_text) * 100
+
+    # Print results
+    print("Typing speed: {:.2f} characters per second".format(typing_speed))
+    print("Accuracy: {:.2f}%".format(accuracy))
+
+typing_tester() 
