@@ -1,0 +1,26 @@
+import demoji
+
+#------------------
+print()
+
+while True:
+    text = "-- Emoji Explainer --"
+    print(f'{text:^45}')
+    
+    user_input = input("Enter the emojis that you would like to be explained: ")
+    results = demoji.findall(user_input)
+
+    print()
+    print("Here is your explanation:")
+    print()
+
+    print(results)
+
+    print()
+    ask = input("Would you like to end? (y/n): ")
+    print()
+
+    if ask.lower() == "y":
+        break
+    else:
+        continue   
