@@ -1,0 +1,28 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+measurements = [
+    [0.7986], [0.8736], [0.8985], [0.9235], [0.9235],
+    [0.9235], [0.9484], [0.9484], [0.9484], [0.9484],
+    [0.9484], [0.9484], [0.9734], [0.9734], [0.9734],
+    [0.9734], [0.9734], [0.9734], [0.9734], [0.9734],
+    [0.9734], [0.9734], [0.9734], [0.9736], [0.9737],
+    [0.9983], [0.9983], [0.9983], [0.9983], [0.9984],
+    [0.9984], [1.1483]
+]
+
+values = np.array(measurements).flatten()
+x = np.arange(len(values))
+mean_value = np.mean(values)
+
+plt.figure(figsize=(10, 5))
+plt.plot(x, values, 'o-', color='gray', label='Measurements')
+plt.axhline(mean_value, color='blue', linestyle='--', label=f'Mean = {mean_value:.4f}')
+
+plt.title("Spring Measurements (31 values) and Mean")
+plt.xlabel("Measurement Index")
+plt.ylabel("Value")
+
+plt.grid(True)
+plt.legend()
+plt.show()
